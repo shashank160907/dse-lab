@@ -92,7 +92,8 @@ num_correct=0
 
 for n in range(1,101):
     x=binaryencode(n)
-    predicted = argmax(fizzbuzzencode(n))
+   predicted = argmax[feed_forward(network,x)[-1]]
+    actual = agrmax(fizzbuzzencode(n))
     labels = [str(n), "fizz","buzz", "fizzbuzz"]
     print(n, labels[predicted], labels[actual])
     if predicted == actual:
